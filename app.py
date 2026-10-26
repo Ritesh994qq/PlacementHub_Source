@@ -1,48 +1,64 @@
 
+import os
+import pymysql
 from flask import Flask, jsonify
 from flask_cors import CORS
-import os
 
 app = Flask(__name__)
+CORS(app)
 
-# Allow requests from your existing website
-CORS(app, origins=[
-    "https://placementhub-source.onrender.com",
-    "http://localhost:5500",
-    "http://127.0.0.1:5500"
-])
+
+def get_db_connection():
+    return pymysql.connect(
+        host=os.environ["DB_HOST"],
+        port=int(os.environ.get("DB_PORT", "26098")),
+        user=os.environ["DB_USER"],
+        password=os.environ["DB_PASSWORD"],
+        database=os.environ.get("DB_NAME", "placementhub"),
+        cursorclass=pymysql.cursors.DictCursor,
+        connect_timeout=10,
+        ssl={}
+    )
 
 
 @app.route("/")
 def home():
     return jsonify({
-        "message": "PlacementHub backend is running!",
-        "status": "success"
+        "status": "success",
+        "message": "PlacementHub backend is running!"
     })
 
 
 @app.route("/api/jobs")
 def get_jobs():
-    jobs = [
-        {
-            "id": 1,
-            "title": "Software Developer Intern",
-            "company": "TCS",
-            "location": "India",
-            "type": "Internship"
-        },
-        {
-            "id": 2,
-            "title": "Data Analyst",
-            "company": "Accenture",
-            "location": "India",
-            "type": "Full-time"
-        }
-    ]
+    connection = None
 
-    return jsonify(jobs)
+    try:
+        connection = get_db_connection()
+
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """
+                SELECT id, title, company, location, type
+                FROM jobs
+                ORDER BY id DESC
+                """
+            )
+            jobs = cursor.fetchall()
+
+        return jsonify(jobs)
+
+    except Exception:
+        app.logger.exception("Failed to retrieve jobs from MySQL")
+        return jsonify({
+            "status": "error",
+            "message": "Unable to retrieve jobs from the database."
+        }), 500
+
+    finally:
+        if connection:
+            connection.close()
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)
+    app.run()
