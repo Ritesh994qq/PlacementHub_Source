@@ -1,4 +1,3 @@
-
 import os
 import pymysql
 from flask import Flask, jsonify
@@ -6,6 +5,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+
 
 
 def get_db_connection():
@@ -16,9 +16,12 @@ def get_db_connection():
         password=os.environ["DB_PASSWORD"],
         database=os.environ.get("DB_NAME", "placementhub"),
         cursorclass=pymysql.cursors.DictCursor,
-        connect_timeout=10,
-        ssl={}
+        connect_timeout=15,
+        read_timeout=15,
+        write_timeout=15,
+        ssl={"check_hostname": True}
     )
+
 
 
 @app.route("/")
