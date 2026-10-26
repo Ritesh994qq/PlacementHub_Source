@@ -107,7 +107,7 @@ async function loadJobsFromBackend() {
             job => !apiIds.has(job.id)
         );
 
-        jobs.splice(0, jobs.length, ...updatedJobs, ...remainingDemoJobs);
+        jobs.splice(0, jobs.length, ...updatedJobs);
 
         renderRecommended();
         renderJobs();
