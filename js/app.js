@@ -89,17 +89,21 @@ async function loadJobsFromBackend() {
             }
 
             return {
-                ...existingJob,
-                ...apiJob,
-                id: Number(apiJob.id),
-                logo: existingJob.logo,
-                logoClass: existingJob.logoClass,
-                salary: existingJob.salary,
-                posted: existingJob.posted,
-                skills: existingJob.skills,
-                description: existingJob.description,
-                status: existingJob.status
-            };
+    ...(existingJob || {}),
+    ...apiJob,
+    id: Number(apiJob.id),
+    title: apiJob.title || existingJob?.title || "Untitled role",
+    company: apiJob.company || existingJob?.company || "Company",
+    logo: existingJob?.logo || apiJob.company || "Job",
+    logoClass: existingJob?.logoClass || "logo-info",
+    location: apiJob.location || existingJob?.location || "India",
+    type: apiJob.type || existingJob?.type || "Full-time",
+    salary: existingJob?.salary || "Not specified",
+    posted: existingJob?.posted || "Recently posted",
+    skills: existingJob?.skills || [],
+    description: existingJob?.description || "Explore this opportunity on PlacementHub.",
+    status: existingJob?.status || "Applied"
+};
         });
 
         const apiIds = new Set(updatedJobs.map(job => job.id));
