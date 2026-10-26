@@ -49,4 +49,82 @@ $("resumeBtn").addEventListener("click",()=>$("resumeInput").click());$("resumeI
 document.querySelectorAll(".resource-action").forEach(b=>b.addEventListener("click",()=>{$("infoTitle").textContent=b.dataset.title;$("infoBody").textContent=b.dataset.body;$("infoDialog").showModal()}));
 document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();$("globalSearch").focus()}if(e.key==="Escape")$("sidebar").classList.remove("open")});
 $("todayDate").textContent=new Date().toLocaleDateString("en-IN",{year:"numeric",month:"long",day:"numeric"});
-renderRecommended();renderJobs();renderApplications();renderCompanies();
+
+const API_URL = "https://placementhub-backend-gp9a.onrender.com";
+
+async function loadJobsFromBackend() {
+    try {
+        const response = await fetch(`${API_URL}/api/jobs`);
+
+        if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+        }
+
+        const apiJobs = await response.json();
+
+        if (!Array.isArray(apiJobs)) {
+            throw new Error("Invalid jobs response");
+        }
+
+        const updatedJobs = apiJobs.map(apiJob => {
+            const existingJob = jobs.find(
+                job => job.id === Number(apiJob.id)
+            );
+
+            if (!existingJob) {
+                return {
+                    id: Number(apiJob.id),
+                    title: apiJob.title || "Untitled role",
+                    company: apiJob.company || "Company",
+                    logo: apiJob.company || "Job",
+                    logoClass: "logo-info",
+                    location: apiJob.location || "India",
+                    type: apiJob.type || "Full-time",
+                    salary: "Not specified",
+                    posted: "Recently posted",
+                    skills: [],
+                    description: "Explore this opportunity on PlacementHub.",
+                    status: "Applied"
+                };
+            }
+
+            return {
+                ...existingJob,
+                ...apiJob,
+                id: Number(apiJob.id),
+                logo: existingJob.logo,
+                logoClass: existingJob.logoClass,
+                salary: existingJob.salary,
+                posted: existingJob.posted,
+                skills: existingJob.skills,
+                description: existingJob.description,
+                status: existingJob.status
+            };
+        });
+
+        const apiIds = new Set(updatedJobs.map(job => job.id));
+        const remainingDemoJobs = jobs.filter(
+            job => !apiIds.has(job.id)
+        );
+
+        jobs.splice(0, jobs.length, ...updatedJobs, ...remainingDemoJobs);
+
+        renderRecommended();
+        renderJobs();
+        renderApplications();
+        renderCompanies();
+
+        toast("Jobs loaded from backend.");
+    } catch (error) {
+        console.error("Backend jobs error:", error);
+
+        renderRecommended();
+        renderJobs();
+        renderApplications();
+        renderCompanies();
+
+        toast("Backend unavailable. Showing demo jobs.");
+    }
+}
+
+loadJobsFromBackend();
