@@ -66,52 +66,44 @@ async function loadJobsFromBackend() {
             throw new Error("Invalid jobs response");
         }
 
+       
         const updatedJobs = apiJobs.map(apiJob => {
             const existingJob = jobs.find(
-                job => job.id === Number(apiJob.id)
-            );
-
-            if (!existingJob) {
-                return {
-                    id: Number(apiJob.id),
-                    title: apiJob.title || "Untitled role",
-                    company: apiJob.company || "Company",
-                    logo: apiJob.company || "Job",
-                    logoClass: "logo-info",
-                    location: apiJob.location || "India",
-                    type: apiJob.type || "Full-time",
-                    salary: "Not specified",
-                    posted: "Recently posted",
-                    skills: [],
-                    description: "Explore this opportunity on PlacementHub.",
-                    status: "Applied"
-                };
-            }
+                job => Number(job.id) === Number(apiJob.id)
+            ) || {};
 
             return {
-    ...(existingJob || {}),
-    ...apiJob,
-    id: Number(apiJob.id),
-    title: apiJob.title || existingJob?.title || "Untitled role",
-    company: apiJob.company || existingJob?.company || "Company",
-    logo: existingJob?.logo || apiJob.company || "Job",
-    logoClass: existingJob?.logoClass || "logo-info",
-    location: apiJob.location || existingJob?.location || "India",
-    type: apiJob.type || existingJob?.type || "Full-time",
-    salary: existingJob?.salary || "Not specified",
-    posted: existingJob?.posted || "Recently posted",
-    skills: existingJob?.skills || [],
-    description: existingJob?.description || "Explore this opportunity on PlacementHub.",
-    status: existingJob?.status || "Applied"
-};
+                ...existingJob,
+                ...apiJob,
+                id: Number(apiJob.id),
+                title: apiJob.title || existingJob.title || "Untitled role",
+                company: apiJob.company || existingJob.company || "Company",
+                logo: existingJob.logo || apiJob.company || "Job",
+                logoClass: existingJob.logoClass || "logo-info",
+                location: apiJob.location || existingJob.location || "India",
+                type: apiJob.type || existingJob.type || "Full-time",
+                salary: existingJob.salary || "Not specified",
+                posted: existingJob.posted || "Recently posted",
+                skills: existingJob.skills || [],
+                description:
+                    existingJob.description ||
+                    "Explore this opportunity on PlacementHub.",
+                status: existingJob.status || "Applied"
+            };
         });
 
         const apiIds = new Set(updatedJobs.map(job => job.id));
+
         const remainingDemoJobs = jobs.filter(
-            job => !apiIds.has(job.id)
+            job => !apiIds.has(Number(job.id))
         );
 
-        jobs.splice(0, jobs.length, ...updatedJobs, ...remainingDemoJobs);
+        jobs.splice(
+            0,
+            jobs.length,
+            ...updatedJobs,
+            ...remainingDemoJobs
+        );
 
         renderRecommended();
         renderJobs();
