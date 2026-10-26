@@ -14,11 +14,13 @@
       <a class="brand" href="#" data-page="dashboard">
         <span class="brand-mark">P</span><span>Placement<span class="brand-light">Hub</span></span>
       </a>
+
       <div class="profile-mini">
-        <div class="avatar">RS</div>
+        <div class="avatar">RK</div>
         <div><strong>Ritesh Kumar</strong><small>MCA · Data Science</small></div>
         <span class="online-dot"></span>
       </div>
+
       <p class="nav-label">WORKSPACE</p>
       <nav class="nav-menu">
         <button class="nav-item active" data-page="dashboard"><span>◫</span> Overview</button>
@@ -26,13 +28,20 @@
         <button class="nav-item" data-page="applications"><span>▤</span> My applications</button>
         <button class="nav-item" data-page="profile"><span>◎</span> My profile</button>
       </nav>
+
       <p class="nav-label">CAREER TOOLS</p>
       <nav class="nav-menu">
         <button class="nav-item" data-page="companies"><span>▦</span> Companies</button>
         <button class="nav-item" data-page="resources"><span>✧</span> Learning hub</button>
       </nav>
+
       <div class="sidebar-bottom">
-        <div class="help-card"><div class="help-icon">✦</div><strong>Need a little help?</strong><p>Get ready for your next big opportunity.</p><button data-page="resources">Explore resources ↗</button></div>
+        <div class="help-card">
+          <div class="help-icon">✦</div>
+          <strong>Need a little help?</strong>
+          <p>Get ready for your next big opportunity.</p>
+          <button data-page="resources">Explore resources ↗</button>
+        </div>
         <button class="nav-item logout" id="logoutBtn"><span>↪</span> Sign out</button>
       </div>
     </aside>
@@ -41,64 +50,319 @@
       <header class="topbar">
         <button class="mobile-menu" id="menuBtn" aria-label="Toggle menu">☰</button>
         <div class="breadcrumb">Workspace <span>/</span> <strong id="crumb">Overview</strong></div>
+
         <div class="top-actions">
-          <label class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Search jobs, companies..." aria-label="Search jobs and companies"><kbd>⌘ K</kbd></label>
+          <label class="global-search">
+            <span>⌕</span>
+            <input id="globalSearch" placeholder="Search jobs, companies..." aria-label="Search jobs and companies">
+            <kbd>⌘ K</kbd>
+          </label>
           <button class="icon-button" id="notificationBtn" aria-label="Notifications">♧<i></i></button>
-          <div class="top-user"><div class="avatar avatar-small">RS</div><div><strong></strong><small>Student account</small></div><span>⌄</span></div>
+          <div class="top-user">
+            <div class="avatar avatar-small">RK</div>
+            <div><strong>Ritesh Kumar</strong><small>Student account</small></div>
+            <span>⌄</span>
+          </div>
         </div>
       </header>
 
       <section class="page active-page" id="dashboardPage">
         <div class="welcome-row">
-          <div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER JOURNEY</div><h1>Good morning, RITESH <span class="wave">✦</span></h1><p class="muted">A little progress each day adds up to big results. Here's your placement snapshot.</p></div>
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER JOURNEY</div>
+            <h1>Good morning, Ritesh Kumar <span class="wave">✦</span></h1>
+            <p class="muted">A little progress each day adds up to big results. Here's your placement snapshot.</p>
+          </div>
           <div class="date-chip">◷ <span id="todayDate">October 26, 2026</span></div>
         </div>
 
         <div class="hero-banner">
-          <div class="hero-copy"><span class="hero-pill">✧ YOUR NEXT CHAPTER STARTS HERE</span><h2>Talent meets<br><em>opportunity.</em></h2><p>Discover roles that match your skills, connect with great teams, and take your next career step.</p><button class="btn btn-white" data-page="jobs">Explore opportunities <span>↗</span></button></div>
-          <div class="hero-art" aria-hidden="true"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orbit"></div><div class="floating-card float-top"><span class="float-icon green">↗</span><div><strong>Profile strength</strong><b>86%</b></div><div class="mini-progress"><span></span></div></div><div class="grad-cap">✦</div><div class="hero-person">RS</div><div class="floating-card float-bottom"><span class="float-icon purple">✧</span><div><strong>You're on track!</strong><small>Keep the momentum going</small></div></div></div>
+          <div class="hero-copy">
+            <span class="hero-pill">✧ YOUR NEXT CHAPTER STARTS HERE</span>
+            <h2>Talent meets<br><em>opportunity.</em></h2>
+            <p>Discover roles that match your skills, connect with great teams, and take your next career step.</p>
+            <button class="btn btn-white" data-page="jobs">Explore opportunities <span>↗</span></button>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <div class="orbit"></div>
+            <div class="floating-card float-top">
+              <span class="float-icon green">↗</span>
+              <div><strong>Profile strength</strong><b>86%</b></div>
+              <div class="mini-progress"><span></span></div>
+            </div>
+            <div class="grad-cap">✦</div>
+            <div class="hero-person">RK</div>
+            <div class="floating-card float-bottom">
+              <span class="float-icon purple">✧</span>
+              <div><strong>You're on track!</strong><small>Keep the momentum going</small></div>
+            </div>
+          </div>
         </div>
 
-        <div class="section-heading"><div><h3>Your placement at a glance</h3><p class="muted">Stay on top of your progress</p></div><button class="text-button" data-page="applications">View activity ↗</button></div>
+        <div class="section-heading">
+          <div><h3>Your placement at a glance</h3><p class="muted">Stay on top of your progress</p></div>
+          <button class="text-button" data-page="applications">View activity ↗</button>
+        </div>
+
         <div class="stats-grid">
-          <article class="stat-card"><div class="stat-top"><span class="stat-icon violet">▤</span><span class="trend positive">↗ 12%</span></div><div class="stat-value">12</div><div class="stat-label">Applications sent</div><div class="stat-foot">vs. last month</div></article>
-          <article class="stat-card"><div class="stat-top"><span class="stat-icon mint">♧</span><span class="trend positive">+2</span></div><div class="stat-value">3</div><div class="stat-label">Interviews scheduled</div><div class="stat-foot">2 this week</div></article>
-          <article class="stat-card"><div class="stat-top"><span class="stat-icon amber">✧</span><span class="trend neutral">In progress</span></div><div class="stat-value">2</div><div class="stat-label">Offers received</div><div class="stat-foot">One step closer!</div></article>
-          <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">♡</span><span class="trend neutral">Saved roles</span></div><div class="stat-value" id="savedCount">5</div><div class="stat-label">Jobs bookmarked</div><div class="stat-foot">Ready when you are</div></article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-icon violet">▤</span><span class="trend positive">↗ 12%</span></div>
+            <div class="stat-value">12</div><div class="stat-label">Applications sent</div><div class="stat-foot">vs. last month</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-icon mint">♧</span><span class="trend positive">+2</span></div>
+            <div class="stat-value">3</div><div class="stat-label">Interviews scheduled</div><div class="stat-foot">2 this week</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-icon amber">✧</span><span class="trend neutral">In progress</span></div>
+            <div class="stat-value">2</div><div class="stat-label">Offers received</div><div class="stat-foot">One step closer!</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-icon blue">♡</span><span class="trend neutral">Saved roles</span></div>
+            <div class="stat-value" id="savedCount">5</div><div class="stat-label">Jobs bookmarked</div><div class="stat-foot">Ready when you are</div>
+          </article>
         </div>
 
         <div class="content-grid">
-          <article class="panel jobs-panel"><div class="panel-heading"><div><h3>Picked for you</h3><p class="muted">Roles that fit your profile</p></div><button class="text-button" data-page="jobs">See all jobs ↗</button></div><div id="recommendedJobs" class="recommended-list"></div></article>
-          <article class="panel status-panel"><div class="panel-heading"><div><h3>Application activity</h3><p class="muted">Your current application pipeline</p></div><button class="more-button" aria-label="More options">•••</button></div><div class="chart-layout"><div class="donut-chart"><div><strong>12</strong><small>Total</small></div></div><div class="chart-legend"><div><i class="legend-dot dot-blue"></i><span>Applied</span><b>12</b></div><div><i class="legend-dot dot-yellow"></i><span>In review</span><b>5</b></div><div><i class="legend-dot dot-purple"></i><span>Interview</span><b>3</b></div><div><i class="legend-dot dot-green"></i><span>Offers</span><b>2</b></div></div></div><div class="chart-note"><span>✦</span> Your profile is getting noticed. Keep applying!</div></article>
+          <article class="panel jobs-panel">
+            <div class="panel-heading">
+              <div><h3>Picked for you</h3><p class="muted">Roles that fit your profile</p></div>
+              <button class="text-button" data-page="jobs">See all jobs ↗</button>
+            </div>
+            <div id="recommendedJobs" class="recommended-list"></div>
+          </article>
+
+          <article class="panel status-panel">
+            <div class="panel-heading">
+              <div><h3>Application activity</h3><p class="muted">Your current application pipeline</p></div>
+              <button class="more-button" aria-label="More options">•••</button>
+            </div>
+            <div class="chart-layout">
+              <div class="donut-chart"><div><strong>12</strong><small>Total</small></div></div>
+              <div class="chart-legend">
+                <div><i class="legend-dot dot-blue"></i><span>Applied</span><b>12</b></div>
+                <div><i class="legend-dot dot-yellow"></i><span>In review</span><b>5</b></div>
+                <div><i class="legend-dot dot-purple"></i><span>Interview</span><b>3</b></div>
+                <div><i class="legend-dot dot-green"></i><span>Offers</span><b>2</b></div>
+              </div>
+            </div>
+            <div class="chart-note"><span>✦</span> Your profile is getting noticed. Keep applying!</div>
+          </article>
         </div>
-        <div class="bottom-grid"><article class="panel progress-panel"><div class="panel-heading"><div><h3>Profile completion</h3><p class="muted">Make your profile stand out</p></div><strong class="completion-number">86%</strong></div><div class="progress-track"><span></span></div><div class="check-list"><span class="check-done">✓ Personal details</span><span class="check-done">✓ Education</span><span class="check-done">✓ Skills</span><span class="check-pending">○ Add project links</span></div><button class="btn btn-outline" data-page="profile">Complete your profile →</button></article><article class="panel event-panel"><div class="event-icon">✦</div><div class="event-copy"><span class="event-label">UP NEXT · CAREER EVENT</span><h3>Crack your next interview</h3><p class="muted">Mock interview workshop · Thursday, 3:00 PM</p><button class="text-button" data-page="resources">View learning hub ↗</button></div><div class="event-decoration">✳</div></article></div>
+
+        <div class="bottom-grid">
+          <article class="panel progress-panel">
+            <div class="panel-heading">
+              <div><h3>Profile completion</h3><p class="muted">Make your profile stand out</p></div>
+              <strong class="completion-number">86%</strong>
+            </div>
+            <div class="progress-track"><span></span></div>
+            <div class="check-list">
+              <span class="check-done">✓ Personal details</span>
+              <span class="check-done">✓ Education</span>
+              <span class="check-done">✓ Skills</span>
+              <span class="check-pending">○ Add project links</span>
+            </div>
+            <button class="btn btn-outline" data-page="profile">Complete your profile →</button>
+          </article>
+
+          <article class="panel event-panel">
+            <div class="event-icon">✦</div>
+            <div class="event-copy">
+              <span class="event-label">UP NEXT · CAREER EVENT</span>
+              <h3>Crack your next interview</h3>
+              <p class="muted">Mock interview workshop · Thursday, 3:00 PM</p>
+              <button class="text-button" data-page="resources">View learning hub ↗</button>
+            </div>
+            <div class="event-decoration">✳</div>
+          </article>
+        </div>
       </section>
 
       <section class="page" id="jobsPage">
-        <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-dot"></span> FIND YOUR NEXT ROLE</div><h1>Explore opportunities</h1><p class="muted">Discover teams where your skills can make a difference.</p></div><span class="date-chip">✧ 8 roles open</span></div>
-        <div class="filter-bar"><label class="search-field">⌕ <input id="jobSearch" placeholder="Job title, skill, or company..."></label><select id="locationFilter"><option value="">All locations</option><option>Bengaluru</option><option>Hyderabad</option><option>Pune</option><option>Remote</option><option>Gurugram</option></select><select id="typeFilter"><option value="">All job types</option><option>Full-time</option><option>Internship</option></select><button class="btn btn-primary" id="clearFilters">Reset filters</button></div>
-        <div class="jobs-heading"><h3 id="jobResultsTitle">Recommended roles</h3><span class="muted" id="jobResultCount">6 opportunities</span></div><div class="job-grid" id="allJobs"></div>
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> FIND YOUR NEXT ROLE</div>
+            <h1>Explore opportunities</h1>
+            <p class="muted">Discover teams where your skills can make a difference.</p>
+          </div>
+          <span class="date-chip">✧ 8 roles open</span>
+        </div>
+
+        <div class="filter-bar">
+          <label class="search-field">⌕ <input id="jobSearch" placeholder="Job title, skill, or company..."></label>
+          <select id="locationFilter">
+            <option value="">All locations</option>
+            <option>Bengaluru</option><option>Hyderabad</option><option>Pune</option><option>Remote</option><option>Gurugram</option>
+          </select>
+          <select id="typeFilter">
+            <option value="">All job types</option>
+            <option>Full-time</option><option>Internship</option>
+          </select>
+          <button class="btn btn-primary" id="clearFilters">Reset filters</button>
+        </div>
+
+        <div class="jobs-heading">
+          <h3 id="jobResultsTitle">Recommended roles</h3>
+          <span class="muted" id="jobResultCount">6 opportunities</span>
+        </div>
+        <div class="job-grid" id="allJobs"></div>
       </section>
 
       <section class="page" id="applicationsPage">
-        <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER PROGRESS</div><h1>My applications</h1><p class="muted">Every application is a step closer to your next opportunity.</p></div></div>
-        <div class="panel table-panel"><div class="panel-heading"><div><h3>Application tracker</h3><p class="muted">Track your applications in one place</p></div><select id="statusFilter"><option value="">All statuses</option><option>Applied</option><option>Under review</option><option>Interview</option><option>Offer received</option></select></div><div class="table-wrap"><table><thead><tr><th>ROLE / COMPANY</th><th>DATE APPLIED</th><th>JOB TYPE</th><th>STATUS</th></tr></thead><tbody id="applicationRows"></tbody></table></div></div>
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER PROGRESS</div>
+            <h1>My applications</h1>
+            <p class="muted">Every application is a step closer to your next opportunity.</p>
+          </div>
+        </div>
+        <div class="panel table-panel">
+          <div class="panel-heading">
+            <div><h3>Application tracker</h3><p class="muted">Track your applications in one place</p></div>
+            <select id="statusFilter">
+              <option value="">All statuses</option>
+              <option>Applied</option><option>Under review</option><option>Interview</option><option>Offer received</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>ROLE / COMPANY</th><th>DATE APPLIED</th><th>JOB TYPE</th><th>STATUS</th></tr></thead>
+              <tbody id="applicationRows"></tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
       <section class="page" id="profilePage">
-        <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR PROFESSIONAL BRAND</div><h1>My profile</h1><p class="muted">Show recruiters what makes you a great candidate.</p></div><button class="btn btn-primary" id="editProfileBtn">✎ Edit profile</button></div>
-        <div class="profile-layout"><article class="panel profile-card"><div class="profile-cover"></div><div class="profile-body"><div class="profile-avatar">RS</div><h2 id="profileName">Ritesh kumar</h2><p class="muted">MCA · Data Science</p><p class="profile-location">⌖ Chandigarh, India</p><div class="profile-badges"><span>Open to work</span><span>Class of 2027</span></div><div class="profile-divider"></div><h3>About</h3><p class="muted">Aspiring data professional interested in turning complex data into clear, useful insights. Currently building skills in Python, SQL, machine learning, and data visualization.</p><button class="btn btn-outline full-width" id="editAboutBtn">Update about section</button></div></article><article class="panel profile-details"><div class="panel-heading"><div><h3>Professional details</h3><p class="muted">Your information visible to recruiters</p></div></div><div class="detail-row"><span>Full name</span><strong id="detailName">Ritesh Kumar</strong></div><div class="detail-row"><span>Email address</span><strong>riteshkj7541@gmail.com</strong></div><div class="detail-row"><span>Degree</span><strong>MCA · Data Science</strong></div><div class="detail-row"><span>Graduation year</span><strong>2027</strong></div><div class="detail-row"><span>Skills</span><div class="skill-tags"><span>Python</span><span>SQL</span><span>Machine Learning</span><span>Power BI</span><span>Java</span></div></div><div class="detail-row"><span>Resume</span><button class="text-button" id="resumeBtn">Upload resume ↗</button><input type="file" id="resumeInput" accept=".pdf,.doc,.docx" hidden></div></article></div>
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR PROFESSIONAL BRAND</div>
+            <h1>My profile</h1>
+            <p class="muted">Show recruiters what makes you a great candidate.</p>
+          </div>
+          <button class="btn btn-primary" id="editProfileBtn">✎ Edit profile</button>
+        </div>
+
+        <div class="profile-layout">
+          <article class="panel profile-card">
+            <div class="profile-cover"></div>
+            <div class="profile-body">
+              <div class="profile-avatar">RK</div>
+              <h2 id="profileName">Ritesh Kumar</h2>
+              <p class="muted">MCA · Data Science</p>
+              <p class="profile-location">⌖ Chandigarh, India</p>
+              <div class="profile-badges"><span>Open to work</span><span>Class of 2027</span></div>
+              <div class="profile-divider"></div>
+              <h3>About</h3>
+              <p class="muted">Aspiring data professional interested in turning complex data into clear, useful insights. Currently building skills in Python, SQL, machine learning, and data visualization.</p>
+              <button class="btn btn-outline full-width" id="editAboutBtn">Update about section</button>
+            </div>
+          </article>
+
+          <article class="panel profile-details">
+            <div class="panel-heading">
+              <div><h3>Professional details</h3><p class="muted">Your information visible to recruiters</p></div>
+            </div>
+            <div class="detail-row"><span>Full name</span><strong id="detailName">Ritesh Kumar</strong></div>
+            <div class="detail-row"><span>Email address</span><strong>riteshkj7541@gmail.com</strong></div>
+            <div class="detail-row"><span>Degree</span><strong>MCA · Data Science</strong></div>
+            <div class="detail-row"><span>Graduation year</span><strong>2027</strong></div>
+            <div class="detail-row">
+              <span>Skills</span>
+              <div class="skill-tags"><span>Python</span><span>SQL</span><span>Machine Learning</span><span>Power BI</span><span>Java</span></div>
+            </div>
+            <div class="detail-row">
+              <span>Resume</span>
+              <button class="text-button" id="resumeBtn">Upload resume ↗</button>
+              <input type="file" id="resumeInput" accept=".pdf,.doc,.docx" hidden>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section class="page" id="companiesPage"><div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-dot"></span> GREAT TEAMS, BIG POSSIBILITIES</div><h1>Meet the companies</h1><p class="muted">Explore employers hiring early-career talent.</p></div></div><div class="company-grid" id="companyGrid"></div></section>
-      <section class="page" id="resourcesPage"><div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-dot"></span> BUILD YOUR EDGE</div><h1>Learning hub</h1><p class="muted">Small steps today. Stronger interviews tomorrow.</p></div></div><div class="resource-grid"><article class="resource-card"><span class="resource-icon lilac">✧</span><span class="resource-tag">INTERVIEW PREP</span><h3>Practice your introduction</h3><p>Build a confident 60-second answer to “Tell me about yourself”.</p><button class="text-button resource-action" data-title="Practice your introduction" data-body="Structure your answer in 4 parts: your current studies, 2 relevant skills, one project you are proud of, and the kind of role you want. Keep it under 60 seconds and practise aloud.">Open guide ↗</button></article><article class="resource-card"><span class="resource-icon mint">⌘</span><span class="resource-tag">TECHNICAL SKILLS</span><h3>Prepare for SQL rounds</h3><p>Revise joins, grouping, subqueries, and common interview patterns.</p><button class="text-button resource-action" data-title="Prepare for SQL rounds" data-body="Start with SELECT and WHERE, then practise INNER/LEFT JOIN, GROUP BY with HAVING, aggregate functions, subqueries, and window functions. Explain your reasoning as you solve each question.">Open guide ↗</button></article><article class="resource-card"><span class="resource-icon peach">▤</span><span class="resource-tag">RESUME BUILDING</span><h3>Make projects count</h3><p>Turn academic projects into clear, results-focused resume bullets.</p><button class="text-button resource-action" data-title="Make projects count" data-body="For each project, state the problem, your contribution, the technology used, and the result. Link your GitHub repository and be ready to explain design choices, limitations, and what you would improve next.">Open guide ↗</button></article></div></section>
+      <section class="page" id="companiesPage">
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> GREAT TEAMS, BIG POSSIBILITIES</div>
+            <h1>Meet the companies</h1>
+            <p class="muted">Explore employers hiring early-career talent.</p>
+          </div>
+        </div>
+        <div class="company-grid" id="companyGrid"></div>
+      </section>
 
-      <footer class="footer"><span>© 2026 PlacementHub</span><span>Built for your next big opportunity <b>✦</b></span></footer>
+      <section class="page" id="resourcesPage">
+        <div class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span> BUILD YOUR EDGE</div>
+            <h1>Learning hub</h1>
+            <p class="muted">Small steps today. Stronger interviews tomorrow.</p>
+          </div>
+        </div>
+
+        <div class="resource-grid">
+          <article class="resource-card">
+            <span class="resource-icon lilac">✧</span><span class="resource-tag">INTERVIEW PREP</span>
+            <h3>Practice your introduction</h3>
+            <p>Build a confident 60-second answer to “Tell me about yourself”.</p>
+            <button class="text-button resource-action" data-title="Practice your introduction" data-body="Structure your answer in 4 parts: your current studies, 2 relevant skills, one project you are proud of, and the kind of role you want. Keep it under 60 seconds and practise aloud.">Open guide ↗</button>
+          </article>
+
+          <article class="resource-card">
+            <span class="resource-icon mint">⌘</span><span class="resource-tag">TECHNICAL SKILLS</span>
+            <h3>Prepare for SQL rounds</h3>
+            <p>Revise joins, grouping, subqueries, and common interview patterns.</p>
+            <button class="text-button resource-action" data-title="Prepare for SQL rounds" data-body="Start with SELECT and WHERE, then practise INNER/LEFT JOIN, GROUP BY with HAVING, aggregate functions, subqueries, and window functions. Explain your reasoning as you solve each question.">Open guide ↗</button>
+          </article>
+
+          <article class="resource-card">
+            <span class="resource-icon peach">▤</span><span class="resource-tag">RESUME BUILDING</span>
+            <h3>Make projects count</h3>
+            <p>Turn academic projects into clear, results-focused resume bullets.</p>
+            <button class="text-button resource-action" data-title="Make projects count" data-body="For each project, state the problem, your contribution, the technology used, and the result. Link your GitHub repository and be ready to explain design choices, limitations, and what you would improve next.">Open guide ↗</button>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© 2026 PlacementHub</span>
+        <span>Built for your next big opportunity <b>✦</b></span>
+      </footer>
     </main>
   </div>
+
   <div class="toast" id="toast" role="status"></div>
-  <dialog id="profileDialog" class="modal"><form method="dialog" id="profileForm"><div class="modal-head"><div><span class="eyebrow">PROFILE SETTINGS</span><h2>Edit your profile</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div><label>Full name<input id="editName" required value=""></label><label>Degree / specialization<input id="editDegree" required value="MCA · Data Science"></label><div class="modal-actions"><button class="btn btn-outline" value="cancel">Cancel</button><button class="btn btn-primary" id="saveProfileBtn" value="default">Save changes</button></div></form></dialog>
-  <dialog id="infoDialog" class="modal"><form method="dialog"><div class="modal-head"><div><span class="eyebrow">PLACEMENTHUB GUIDE</span><h2 id="infoTitle">Career guide</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div><p id="infoBody" class="muted guide-copy"></p><button class="btn btn-primary full-width" value="cancel">Got it</button></form></dialog>
+
+  <dialog id="profileDialog" class="modal">
+    <form method="dialog" id="profileForm">
+      <div class="modal-head">
+        <div><span class="eyebrow">PROFILE SETTINGS</span><h2>Edit your profile</h2></div>
+        <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <label>Full name<input id="editName" required value="Ritesh Kumar"></label>
+      <label>Degree / specialization<input id="editDegree" required value="MCA · Data Science"></label>
+      <div class="modal-actions">
+        <button class="btn btn-outline" value="cancel">Cancel</button>
+        <button class="btn btn-primary" id="saveProfileBtn" value="default">Save changes</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="infoDialog" class="modal">
+    <form method="dialog">
+      <div class="modal-head">
+        <div><span class="eyebrow">PLACEMENTHUB GUIDE</span><h2 id="infoTitle">Career guide</h2></div>
+        <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <p id="infoBody" class="muted guide-copy"></p>
+      <button class="btn btn-primary full-width" value="cancel">Got it</button>
+    </form>
+  </dialog>
+
   <script src="js/app.js"></script>
 </body>
 </html>
